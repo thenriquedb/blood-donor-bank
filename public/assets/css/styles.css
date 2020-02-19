@@ -1,0 +1,256 @@
+input,button {
+  outline: none;
+}
+
+body {
+  font-family: "Montserrat","Arial","Helvetica","sans-serif";
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  margin: 0;  
+  background-color: #FEF7FE;
+}
+
+header, footer {
+  display: flex;
+justify-content: center;
+}
+
+footer {
+  width: 100%;
+  bottom: 0;
+}
+
+footer p {
+  color: #5555;
+  font-size: 14px;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 600px;
+}
+
+.search-section {
+  background-color: blue;
+  margin-top: 10px;
+  margin-bottom: 50px;
+}
+
+.search-bar{
+  height: 40px;
+  width: 250px;
+  padding: 5px;
+  margin-bottom: 10px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+.search-button{
+  height: 40px;
+  background-color: #F0314F;
+  border-radius: 5px;
+  border-color: #ccc;
+  font-weight: bold;
+  font-size: 14px;
+  color: #fff;
+}
+
+
+.logo {
+  width: 150px;
+  margin: 10px 0;
+  padding: 0 50px;
+}
+
+.message-section, .form-section, .donors-section{
+  width: 90%;
+  max-width: 600px;
+  margin: 40px auto;
+}
+
+
+.message-section {
+  text-align: center;
+}
+
+.message-section button {
+  padding: 12px 40px;
+  background-color: #F0314F;
+  color: #fff;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.form-section {
+  background-color: #F0314F;
+  color: #fff;
+  padding: 30px 100px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.form-section--left {
+  display: flex;
+  align-items: center;
+  text-align: right;
+  margin: 0 30px;
+}
+
+.form-section--right form {
+  display: flex;
+  flex-direction: column;  
+}
+
+.form-section--right .input{
+  height: 25px;
+  padding: 5px;
+  margin-bottom: 10px;
+  border: 2px solid rgba(255, 255, 255,0.3);
+  border-radius: 5px;
+  background-color: transparent;
+}
+
+.form-section--right .input::placeholder {
+  color:rgba(255, 255, 255,0.5) ;
+}
+
+.form-section--right .submit {
+  height: 50px;
+  background-color: #fff;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.form-section--right .submit:hover {
+  cursor: pointer; 
+  background-color: #f4f4f4;
+}
+
+.form-section--right select {
+  height: 40px;
+  background-color: #fff;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+select option{
+  background-color: #fff;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 15px 0;
+}
+
+select.decorated option:hover {
+  box-shadow: 0 0 10px 100px #F0314F inset;
+}
+
+
+.donors-section {
+  text-align: center;
+}
+
+.donors-section h1 {
+  font-size: 32px;
+  /* margin-bottom: 60px; */
+}
+
+
+.donors-section h1 span {
+  color: #F0314F;
+}
+
+
+
+.donors {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.donor {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 10px;
+
+}
+
+.blood {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  font-weight: bold;
+  color: #F0314F;
+}
+
+.donor  p {
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 64px ;
+}
+
+.blood::before {
+  content: "";
+  height: 50px;
+  width:  50px;
+  border-radius: 50%;
+  position: absolute;
+  background-color: #ff4f4f11;
+
+  /* Fazer a gotinha */
+  border-top-right-radius: 0;
+  transform: rotate(-45deg);
+}
+
+/* JS */
+.form-section.hide {
+  opacity: 0;
+  visibility: hidden;
+  height: 0;
+  margin-top:-50;
+  padding: 0;
+}
+
+.form-section {
+  transition: all 400ms;
+}
+
+
+@media(max-width: 768px){
+  .donors,.form-section {
+    grid-template-columns: 1fr;
+  }
+
+  .form-section {
+    padding: 20px 10px;
+  }
+}
+
+@media(max-width: 450px) {
+  .donors,.form-section {
+    grid-template-columns: 1fr;
+  }
+  .form-section--left {
+    justify-content: center;
+    text-align: center;
+    margin: 0;
+  }
+
+  .form-section  {
+    padding: 30px 15px;
+  }
+
+  .donor .blood {
+    height: 60px;
+    width:  60px;
+  }
+}

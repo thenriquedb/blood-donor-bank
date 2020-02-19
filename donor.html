@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./assets/css/styles.css" rel="stylesheet">
+  <link href="./assets/css/donor.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" rel="stylesheet">
+  <title>Doador | {{donor[0].name}}</title>
+</head>
+
+<body>
+  <header>
+    <div class="header-content">
+      <a href="/">
+        <img class="logo" src="./assets/images/logo.png">
+      </a>
+      <form action="/donor">
+        <input required class="search-bar" name="search" type="search" placeholder="Pesquise por um doador" />
+        <input class="search-button" class="submit" value="Buscar" type="submit">
+      </form>
+    </div>
+  </header>
+
+  <main>
+    <section class="content">
+
+      {% if donor.length > 0 %}
+      <h1> Ficha do doador </h1>
+
+      <p class="label">Nome</p>
+      <p class="info">{{donor[0].name}} </p>
+
+      <p class="label">Email</p>
+      <p class="info">{{donor[0].email}} </p>
+
+      <p class="label">Tipo sanguíneo</p>
+      <p class="info">{{donor[0].blood}} </p>
+
+      {% else %}
+      <h1> Não foi encontrado nenhum doador com este nome </h1>
+      {% endif %}
+
+    </section>
+
+    <main>
+</body>
+
+</html>
